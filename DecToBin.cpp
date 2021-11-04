@@ -131,7 +131,7 @@ vector<int> IntegerToBin::to2s32Bit(const long long &d) {
         a = ~a;
         a++;
     }
-    if ((long long)(1 << 32) - 1 <= abs(d))
+    if ((long long)(1ULL << 32) - 1 <= abs(d))//Warning: (1 << 32) overflow
         throw runtime_error("over size of 32bits");
 
     return a;
