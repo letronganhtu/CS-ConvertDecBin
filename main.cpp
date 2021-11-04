@@ -89,22 +89,55 @@ int main() {
         CheckBinarySequence check;
         while (!check.isValid(bin)) {
             system("cls");
-            cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n\n";
-            cout << "Wrong input. Please type again!\n";
-            cout << "Let's enter your binary sequence: ";
+            cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n";
+            cout << "The length of binary sequence: ";
+            if (choice == 1) cout << "8 bits\n";
+            else if (choice == 2) cout << "16 bits\n";
+            else if (choice == 3) cout << "32 bits\n";
+            else if (choice == 4) cout << "64 bits\n";
+            cout << "Enter your binary sequence: ";
             cin >> bin;
         }
-
+        int len = 0;
+        system("cls");
+        cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n";
+        cout << "The length of binary sequence: ";
+        if (choice == 1) {
+            cout << "8 bits\n";
+            len = 8;
+        }
+        else if (choice == 2) {
+            cout << "16 bits\n";
+            len = 16;
+        }
+        else if (choice == 3) {
+            cout << "32 bits\n";
+            len = 32;
+        }
+        else if (choice == 4) {
+            cout << "64 bits\n";
+            len = 64;
+        }
+        if (len == 8 || len == 16) {
+            BinaryToInteger bti(len, bin);
+            cout << Presentation::representInputBitSequence(bti.numberOfBit(), bti.binarySequence());
+            cout << "\n\nUnsigned integer: " << bti.convertToUnsignedInteger();
+            cout << "\n\nSigned integer: " << bti.convertToSignedInteger();
+        }
+        else if (len == 32) {
+            BinaryToInteger bti(len, bin);
+            BinaryToFloatingPoint btf(len, bin);
+            cout << Presentation::representInputBitSequence(bti.numberOfBit(), bti.binarySequence());
+            cout << "\n\nUnsigned integer: " << bti.convertToUnsignedInteger();
+            cout << "\n\nSigned integer: " << bti.convertToSignedInteger();
+            cout << fixed << setprecision(5) << "\n\nFloat: " << btf.convertToSinglePrecisionFloat();
+        }
+        else if (len == 64) {
+            BinaryToFloatingPoint btf(len, bin);
+            cout << Presentation::representInputBitSequence(btf.numberOfBit(), btf.binarySequence());
+            cout << fixed << setprecision(5) << "\nDouble: " << btf.convertToDoublePrecision();
+        }
     }
-    /*string binarySequence;
-    cin >> binarySequence;*/
-    /*BinaryToInteger bti(8, binarySequence);
-    cout << InputRepresentation::represent(bti.numberOfBit(), bti.binarySequence()) << endl;
-    cout << bti.convertToUnsignedInteger() << endl;
-    cout << bti.convertToSignedInteger();
-    BinaryToFloatingPoint btf(64, binarySequence);
-    cout << btf.convertToDoublePrecision();*/
-
     return 0;
 }
 // g++ BinToDec.cpp BinToDec.h ConsolePresentation.cpp ConsolePresentation.h DecToBin.cpp DecToBin.h main.cpp
