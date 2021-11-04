@@ -39,19 +39,50 @@ int main() {
         cout << "\nSingle precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to32Bit(x));
         cout << "\n\nDouble precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to64Bit(x));
         cout << "\n\nUnsigned interger 8 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to8Bit(x));
-        cout << "\n\nInterger 8 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s8Bit(x));
+        try {
+            cout << "\n\nInterger 8 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s8Bit(x));
+        }
+        catch (runtime_error ex) {
+            cout << ex.what();
+        }
         cout << "\n\nUnsigned interger 16 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to16Bit(x));
-        cout << "\n\nInterger 16 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s16Bit(x));
+        try {
+            cout << "\n\nInterger 16 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s16Bit(x));
+        }
+        catch (runtime_error ex) {
+            cout << ex.what();
+        }
         cout << "\n\nUnsigned interger 32 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to32Bit(x));
-        cout << "\n\nInterger 32 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s32Bit(x));
+        try {
+            cout << "\n\nInterger 32 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s32Bit(x));
+        }
+        catch (runtime_error ex) {
+            cout << ex.what();
+        }
     }
     else {
         system("cls");
         cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n";
-        cout << "Let's choose your length of binary sequence (8/16/32/64)\n";
+        cout << "Let's choose your length of binary sequence (8/16/32/64 bits)\n";
+        cout << "1. 8 bits\t2. 16 bits\t3. 32 bits\t4. 64 bits\n";
         cout << "Your choice: ";
-        int choice1;
-        cin >> choice1;
+        while (true) {
+            cin >> choice;
+            int length;
+            if (choice == 1) length = 8;
+            else if (choice == 2) length = 16;
+            else if (choice == 3) length = 32;
+            else if (choice == 4) length = 64;
+            else {
+                system("cls");
+                cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n";
+                cout << "Let's choose your length of binary sequence (8/16/32/64 bits)\n";
+                cout << "1. 8 bits\t2. 16 bits\t3. 32 bits\t4. 64 bits\n";
+                cout << "Your choice: ";
+                continue;
+            }
+            break;
+        }
         cout << "Enter your binary sequence: ";
         string bin;
         cin >> bin;
