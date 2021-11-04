@@ -60,6 +60,9 @@ vector<int> IntegerToBin::toBit(const long long &d) {
 
     reverse(res.begin(), res.end());
 
+    if(res.size() == 0)
+        res.push_back(0);
+
     return res;
 }
 
@@ -74,6 +77,10 @@ vector<int> IntegerToBin::to64Bit(const long long &d) {
         res.push_back(0);
 
     reverse(res.begin(), res.end());
+    
+    if(res.size() == 0)
+        res = vector<int>(64, 0);
+
     return res;
 }
 
@@ -149,6 +156,9 @@ vector<int> DoubleToBin::to32Bit(const double& b) {
     res += IntegerToBin::to8Bit(e);
     res += vector<int>(man.begin() + 1, man.end());
 
+    if(res.size() < 32)
+        res += vector<int>(32 - res.size(), 0);
+
     return res;
 }
 
@@ -163,6 +173,9 @@ vector<int> DoubleToBin::to64Bit(const double& b) {
     res.push_back(b < 0 ? 1 : 0);
     res += IntegerToBin::to11Bit(e);
     res += vector<int>(man.begin() + 1, man.end());
+
+    if(res.size() < 64)
+        res += vector<int>(64 - res.size(), 0);
 
     return res;
 }
