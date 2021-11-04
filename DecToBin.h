@@ -4,18 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-template<class T>
-ostream& operator<<(ostream& out, const vector<T>& a);
-
-template<class T>
-vector<T> operator~(const vector<T>& a);
-
-template<class T>
-vector<T>& operator++(vector<T>& a, int );
-
-template<class T>
-vector<T>& operator+=(vector<T>& a, const vector<T>& b);
-
 class Math {
 public:
     static unsigned long long mpow(unsigned long long x, int y);

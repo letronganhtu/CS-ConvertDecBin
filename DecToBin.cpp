@@ -18,7 +18,7 @@ vector<T> operator~(const vector<T>& a) {
 }
 
 template<class T>
-vector<T>& operator++(vector<T>& a, int ) {
+vector<T>& operator++(vector<T>& a, int) {
     int r = 0;
     a[a.size() - 1] ++;
     r = a.back() / 2;

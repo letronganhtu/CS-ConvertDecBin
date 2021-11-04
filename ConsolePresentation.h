@@ -1,8 +1,9 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-// User know what they have just entered into program
-class InputPresentation {
+class Presentation {
 public:
     static string representInputBitSequence(int, string);
+    static string representOutputBitSequence(vector<int>);
 };

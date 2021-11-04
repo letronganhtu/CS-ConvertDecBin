@@ -5,6 +5,13 @@
 #include "ConsolePresentation.h"
 #include "DecToBin.h"
 
+template<class T>
+ostream& operator<<(ostream& out, const vector<T>& a) {
+    for (int i = 0; i < a.size(); ++i)
+        out << a[i];
+    return out;
+}
+
 int main() {
     int choice = 0;
     bool firstTime = true;
@@ -24,7 +31,15 @@ int main() {
     }
     if (choice == 3) cout << "\nGood Bye ^^";
     else if (choice == 1) {
-
+        system("cls");
+        cout << "WELCOME TO BINARY CONVERT\n\n1. Decimal convert to Binary\n\n";
+        cout << "Let's enter your value: ";
+        double x;
+        cin >> x;
+        cout << "\nSingle precision floating-point: " 
+            << Presentation::representOutputBitSequence(DoubleToBin::to32Bit(x));
+        cout << "\n\nDouble precision floating-point: " 
+            << Presentation::representOutputBitSequence(DoubleToBin::to64Bit(x));
     }
     else {
 
@@ -37,9 +52,6 @@ int main() {
     cout << bti.convertToSignedInteger();
     BinaryToFloatingPoint btf(64, binarySequence);
     cout << btf.convertToDoublePrecision();
-
-    double x;
-    cin >> x;
 
     bitset<64> b(x);
     cout << b.to_string() << '\n';
