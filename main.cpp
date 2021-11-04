@@ -32,14 +32,24 @@ int main() {
     if (choice == 3) cout << "\nGood Bye ^^";
     else if (choice == 1) {
         system("cls");
-        cout << "WELCOME TO BINARY CONVERT\n\n1. Decimal convert to Binary\n\n";
+        cout << "WELCOME TO BINARY CONVERT\n\n1. Decimal convert to Binary\n";
         cout << "Let's enter your value: ";
         double x;
         cin >> x;
-        cout << "\nSingle precision floating-point: " 
-            << Presentation::representOutputBitSequence(DoubleToBin::to32Bit(x));
-        cout << "\n\nDouble precision floating-point: " 
-            << Presentation::representOutputBitSequence(DoubleToBin::to64Bit(x));
+        cout << "\nSingle precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to32Bit(x));
+        cout << "\n\nDouble precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to64Bit(x));
+        cout << "\n\nUnsigned interger 8 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to8Bit(x));
+        cout << "\n\nInterger 8 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to2s8Bit(x));
+        cout << "\n\nUnsigned interger 16 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to16Bit(x));
+        cout << "\n\nInterger 16 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to2s16Bit(x));
+        cout << "\n\nUnsigned interger 32 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to32Bit(x));
+        cout << "\n\nInterger 32 bits: " 
+            << Presentation::representOutputBitSequence(IntegerToBin::to2s32Bit(x));
     }
     else {
 
@@ -52,12 +62,7 @@ int main() {
     cout << bti.convertToSignedInteger();
     BinaryToFloatingPoint btf(64, binarySequence);
     cout << btf.convertToDoublePrecision();
-
-    bitset<64> b(x);
-    cout << b.to_string() << '\n';
-
-    cout << DoubleToBin::to32Bit(x);
-    cout << '\n' << DoubleToBin::to64Bit(x);*/
+*/
 
     return 0;
 }
