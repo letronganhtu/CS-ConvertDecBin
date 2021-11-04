@@ -38,20 +38,31 @@ int main() {
         cin >> x;
         cout << "\nSingle precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to32Bit(x));
         cout << "\n\nDouble precision floating-point: " << Presentation::representOutputBitSequence(DoubleToBin::to64Bit(x));
-        cout << "\n\nUnsigned interger 8 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to8Bit(x));
-        cout << "\n\nInterger 8 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to2s8Bit(x));
-        cout << "\n\nUnsigned interger 16 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to16Bit(x));
-        cout << "\n\nInterger 16 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to2s16Bit(x));
-        cout << "\n\nUnsigned interger 32 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to32Bit(x));
-        cout << "\n\nInterger 32 bits: " 
-            << Presentation::representOutputBitSequence(IntegerToBin::to2s32Bit(x));
+        cout << "\n\nUnsigned interger 8 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to8Bit(x));
+        cout << "\n\nInterger 8 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s8Bit(x));
+        cout << "\n\nUnsigned interger 16 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to16Bit(x));
+        cout << "\n\nInterger 16 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s16Bit(x));
+        cout << "\n\nUnsigned interger 32 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to32Bit(x));
+        cout << "\n\nInterger 32 bits: " << Presentation::representOutputBitSequence(IntegerToBin::to2s32Bit(x));
     }
     else {
+        system("cls");
+        cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n";
+        cout << "Let's choose your length of binary sequence (8/16/32/64)\n";
+        cout << "Your choice: ";
+        int choice1;
+        cin >> choice1;
+        cout << "Enter your binary sequence: ";
+        string bin;
+        cin >> bin;
+        CheckBinarySequence check;
+        while (!check.isValid(bin)) {
+            system("cls");
+            cout << "WELCOME TO BINARY CONVERT\n\n2. Binary convert to Decimal\n\n";
+            cout << "Wrong input. Please type again!\n";
+            cout << "Let's enter your binary sequence: ";
+            cin >> bin;
+        }
 
     }
     /*string binarySequence;
@@ -61,8 +72,7 @@ int main() {
     cout << bti.convertToUnsignedInteger() << endl;
     cout << bti.convertToSignedInteger();
     BinaryToFloatingPoint btf(64, binarySequence);
-    cout << btf.convertToDoublePrecision();
-*/
+    cout << btf.convertToDoublePrecision();*/
 
     return 0;
 }
