@@ -111,9 +111,10 @@ vector<int> IntegerToBin::to32Bit(const long long &d) {
 vector<int> IntegerToBin::to2s8Bit(const long long &d) {
     vector<int> a = to8Bit(d);
     if (d < 0) {
-        a = ~a;
-        a++;
+        a = ~a; //a is a vector type that needs overloaded operator ~
+        a++; //a is a vector type that needs overloaded operator +
     }
+    //This condition to check the performance bit sequence 
     if ((long long)(1 << 8) - 1 <= abs(d))
         throw runtime_error("over size of 8bits");
             
@@ -123,9 +124,10 @@ vector<int> IntegerToBin::to2s8Bit(const long long &d) {
 vector<int> IntegerToBin::to2s16Bit(const long long &d) {
     vector<int> a = to16Bit(d);
     if (d < 0) {
-        a = ~a;
-        a++;
+        a = ~a; //a is a vector type that needs overloaded operator ~
+        a++; //a is a vector type that needs overloaded operator +
     }
+    //This condition to check the performance bit sequence 
     if ((long long)(1 << 16) - 1 <= abs(d))
         throw runtime_error("over size of 16bits");
             
@@ -135,9 +137,10 @@ vector<int> IntegerToBin::to2s16Bit(const long long &d) {
 vector<int> IntegerToBin::to2s32Bit(const long long &d) {
     vector<int> a = to32Bit(d);
     if (d < 0) {
-        a = ~a;
-        a++;
+        a = ~a; //a is a vector type that needs overloaded operator ~
+        a++; //a is a vector type that needs overloaded operator +
     }
+    //This condition to check the performance bit sequence 
     if ((long long)(1ULL << 32) - 1 <= abs(d))//Warning: (1 << 32) overflow
         throw runtime_error("over size of 32bits");
 
