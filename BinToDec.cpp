@@ -34,7 +34,7 @@ string BinaryToInteger::binarySequence() const { return _binarySequence; }
 unsigned int BinaryToInteger::convertToUnsignedInteger() {
     unsigned int res = 0;
     int idx = 0;
-
+    // assume that bit sequence have length is 8
     for (int i = _numberOfBit - 1; i >= 0; i--) {
         if (_binarySequence[i] == '1') {
             res += pow(2, idx);
@@ -46,6 +46,8 @@ unsigned int BinaryToInteger::convertToUnsignedInteger() {
 }
 
 int BinaryToInteger::convertToSignedInteger() {
+
+    //assume that bit sequence have length is 8
     int res = (_binarySequence[0] == '1') ? -pow(2, _numberOfBit - 1) : 0;
     int idx = 0;
 
