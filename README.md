@@ -11,4 +11,4 @@ Thư mục bao gồm các file/thư mục con:
 ## 3. Tác giả
 Các tác giả khi làm chương trình trên đây hiện là sinh viên năm 2 trường Đại học Khoa học Tự nhiên, TP.HCM.
 - [Lê Trọng Anh Tú](https://www.facebook.com/BM.Doraeiga)
-- [Phan Tuấn Khải](www.facebook.com/phantuankhai1203)
+- [Phan Tuấn Khải](https://www.facebook.com/phantuankhai1203)
