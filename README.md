@@ -15,11 +15,11 @@ Các tác giả khi làm chương trình trên đây hiện là sinh viên năm 
 ---
 # Convert between binary and decimal
 ## 1. Structure
-Folder include sub file/folder:
-* `BinToDec.cpp` `BinToDec.h`: Include class and function convert binary sequence into unsigned/sign integer, and real numbers in IEEE754 format.
-* `ConsolePresentation.cpp` `ConsolePresentation.h`: Include class and function to performances binary sequence in user interface.
-* `DecToBin.cpp` `DecToBin.h`: Include class and function convert numbers in decimal into binary sequence 8/16/32/64 bit.
-* `main.cpp`: Design and execute program/function in above files.
+Folder include sub files/folders:
+* `BinToDec.cpp` `BinToDec.h`: Include class and functions convert binary sequence into unsigned/sign integer, and real numbers in IEEE754 format.
+* `ConsolePresentation.cpp` `ConsolePresentation.h`: Include class and functions to performances binary sequence in user interface.
+* `DecToBin.cpp` `DecToBin.h`: Include class and functions convert numbers in decimal into binary sequence 8/16/32/64 bit.
+* `main.cpp`: Design and execute program/functions in above files.
 ## 2.Tutorial
 * Run file `main.cpp` and input as stated on the UI.
 * Note: if input wrong format, errors will occur. Thus limiting wrong input to avoid unnecessary errors.
