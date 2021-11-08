@@ -14,7 +14,7 @@ Các tác giả khi làm chương trình trên đây hiện là sinh viên năm 
 - [Phan Tuấn Khải](https://www.facebook.com/phantuankhai1203)
 ---
 # Convert between binary and decimal
-## 1. Sructure
+## 1. Structure
 Folder include sub file/folder:
 * `BinToDec.cpp` `BinToDec.h`: Include class and function convert binary sequence into unsigned/sign integer, and real numbers in IEEE754 format.
 * `ConsolePresentation.cpp` `ConsolePresentation.h`: Include class and function to performances binary sequence in user interface.
